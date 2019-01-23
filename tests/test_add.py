@@ -1,6 +1,8 @@
 """
 Tests the add() function of the calculator.
 """
+import pytest
+
 from calculator import add
 
 
@@ -33,3 +35,11 @@ def test_negative_values():
     Test negative values
     """
     assert add(-1, -1, -1, -1, -1) == -5
+
+def test_decimal_values():
+    """
+    Asserts that 0.1, 0.1 and 0.1 equals 0.3
+    """
+    # assert round(add(0.1, 0.1, 0.1), 2) == round(0.3, 2)
+    # use the pytest.approx to handle rounding errors
+    assert add(0.1, 0.1, 0.1) == pytest.approx(0.3)
