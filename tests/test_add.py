@@ -27,3 +27,9 @@ def test_one_two_three():
     Given the values 1, 2 and 3 as parameters, 6 should be returned.
     """
     assert add(1, 2, 3) == 6
+
+def test_negative_values():
+    """
+    Test negative values
+    """
+    assert add(-1, -1, -1, -1, -1) == -5
