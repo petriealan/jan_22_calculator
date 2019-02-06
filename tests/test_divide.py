@@ -2,6 +2,7 @@
 Tests the add() function of the calculator.
 """
 import pytest
+import math
 
 from calculator import divide
 
@@ -12,11 +13,17 @@ def test_two_divide_two():
     """
     assert divide(2, 2) == 1
 
+def test_without_parameters():
+    """
+    Given that no parameters are provided to the function, return a nan float
+    """
+    pass
+
 def test_divide_by_zero():
     """
-    Test when dividing an number by zero
+    Test when dividing an number by zero, return a nan float
     """
-    assert divide(100, 0) == 0  # How should an error be represented
+    assert divide(100, 0) is math.nan
 
 def test_decimal_result():
     """
